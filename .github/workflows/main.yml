@@ -52,12 +52,12 @@ jobs:
       # Build the Docker Image
       - name: Build Docker Image
         run: |
-          docker build . -t atultele/demo-app:${{ env.VERSION }} 
+          docker build . -t atultele/flask-app:${{ env.VERSION }} 
       
       # Push the Docker Image
       - name: Push Docker Image
         run: |
-          docker push atultele/demo-app:${{ env.VERSION }}
+          docker push atultele/flask-app:${{ env.VERSION }}
       
       
 
