@@ -43,21 +43,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       
-      - name: Docker tag
-        id: version
-        run: |
-          VERSION=v$(date +"%Y%m%d%H%M%S")
-          echo "VERSION=$VERSION" >> $GITHUB_ENV
-
-      # Build the Docker Image
-      - name: Build Docker Image
-        run: |
-          docker build . -t atultele/flask-app:${{ env.VERSION }} 
-      
-      # Push the Docker Image
-      - name: Push Docker Image
-        run: |
-          docker push atultele/flask-app:${{ env.VERSION }}
+    
       
       
 
